@@ -1,4 +1,5 @@
 "use client";
+import { HamburgerIcon } from "@chakra-ui/icons";
 import {
   Button,
   Drawer,
@@ -9,27 +10,18 @@ import {
   DrawerFooter,
   DrawerContent,
   useDisclosure,
+  Menu,
+  MenuButton,
+  MenuItem,
+  IconButton,
+  MenuList,
 } from "@chakra-ui/react";
+import Link from "next/link";
 import React from "react";
 
-export default function Sidebar() {
-  const { isOpen = true, onOpen, onClose } = useDisclosure();
-  const btnRef = React.createRef<HTMLButtonElement>();
-
+export default function Sidebar({ isOpen, onClose, onOpen, btnRef }: any) {
   return (
     <>
-      <Button
-        ref={btnRef}
-        colorScheme="teal"
-        className="bg-black"
-        onClick={onOpen}
-        alignSelf="left"
-        left="10"
-        position="absolute"
-        top="3"
-      >
-        Open
-      </Button>
       <Drawer
         isOpen={isOpen}
         placement="left"
@@ -39,16 +31,13 @@ export default function Sidebar() {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader>Create your account</DrawerHeader>
+          <DrawerHeader>DASHBOARD</DrawerHeader>
 
-          <DrawerBody></DrawerBody>
+          <DrawerBody>
+            <Link href="/">Dashboard</Link>
+          </DrawerBody>
 
-          <DrawerFooter>
-            <Button variant="outline" mr={3} onClick={onClose}>
-              Cancel
-            </Button>
-            <Button colorScheme="blue">Save</Button>
-          </DrawerFooter>
+          <DrawerFooter>Social Media</DrawerFooter>
         </DrawerContent>
       </Drawer>
     </>
