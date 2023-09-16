@@ -1,6 +1,9 @@
 "use client";
 import { AiFillDashboard, AiFillFacebook } from "react-icons/ai";
 import { SiWalletconnect } from "react-icons/si";
+import { ImUsers } from "react-icons/im";
+import { BsFillPostcardFill } from "react-icons/bs";
+import { FaCopyright } from "react-icons/fa";
 import {
   Button,
   Drawer,
@@ -66,29 +69,25 @@ export default function Sidebar({ isOpen, onClose, onOpen, btnRef }: any) {
               <p>Dashboard</p>
             </Link>
             <Link
-              href="/"
+              href="/users"
               className="w-full pl-6 border-2 border-white flex items-center gap-4 text-white text-2xl"
             >
-              <AiFillDashboard />
-              <p>Dashboard</p>
+              <ImUsers />
+              <p>Users</p>
             </Link>
+
             <Link
-              href="/"
+              href="/posts"
               className="w-full pl-6 border-2 border-white flex items-center gap-4 text-white text-2xl"
             >
-              <AiFillDashboard />
-              <p>Dashboard</p>
-            </Link>
-            <Link
-              href="/"
-              className="w-full pl-6 border-2 border-white flex items-center gap-4 text-white text-2xl"
-            >
-              <AiFillDashboard />
-              <p>Dashboard</p>
+              <BsFillPostcardFill />
+              <p>Posts</p>
             </Link>
           </DrawerBody>
 
-          <DrawerFooter>Social Media</DrawerFooter>
+          <DrawerFooter>
+            <FaCopyright /> CopyRights Reserved
+          </DrawerFooter>
         </DrawerContent>
       </Drawer>
     </>

@@ -1,9 +1,9 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
-import { getOrders, getInventory, getUsers } from "./index"; // Import your API functions here
+import { getOrders, getInventory, getUsers, getPosts } from "./index"; // Import your API functions here
 
 type ContextType = {
-  posts: number;
-  setposts: React.Dispatch<React.SetStateAction<number>>;
+  posts: {}[];
+  setposts: React.Dispatch<React.SetStateAction<{}[]>>;
   inventory: number;
   setInventory: React.Dispatch<React.SetStateAction<number>>;
   customers: {}[];
@@ -18,7 +18,7 @@ export const useAppContext = () => {
 };
 
 export const AppProvider = ({ children }: { children: React.ReactNode }) => {
-  const [posts, setposts] = useState(0);
+  const [posts, setposts] = useState<{}[]>([]);
   const [inventory, setInventory] = useState(0);
   const [customers, setCustomers] = useState<{}[]>([]);
   const [revenue, setRevenue] = useState(0);
@@ -33,6 +33,9 @@ export const AppProvider = ({ children }: { children: React.ReactNode }) => {
     });
     getUsers().then((res: any) => {
       setCustomers(res.users);
+    });
+    getPosts().then((res: any) => {
+      setposts(res.posts);
     });
   }, []);
 
