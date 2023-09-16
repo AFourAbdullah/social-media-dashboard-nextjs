@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
-import { getOrders, getInventory, getUsers, getPosts } from "./index"; // Import your API functions here
+import { getInventory, getUsers, getPosts } from "./index"; // Import your API functions here
 
 type ContextType = {
   posts: {}[];
@@ -24,9 +24,6 @@ export const AppProvider = ({ children }: { children: React.ReactNode }) => {
   const [revenue, setRevenue] = useState(0);
 
   useEffect(() => {
-    getOrders().then((res: any) => {
-      setRevenue(res.discountedTotal);
-    });
     getInventory().then((res: any) => {
       setInventory(res.total);
     });

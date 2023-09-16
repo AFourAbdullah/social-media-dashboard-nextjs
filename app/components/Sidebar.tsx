@@ -47,7 +47,6 @@ export default function Sidebar({ isOpen, onClose, onOpen, btnRef }: any) {
             }}
           >
             <SiWalletconnect />
-            <h4>DASHBOARD</h4>
           </DrawerHeader>
 
           <DrawerBody
@@ -64,6 +63,7 @@ export default function Sidebar({ isOpen, onClose, onOpen, btnRef }: any) {
             <Link
               href="/"
               className="w-full pl-6  flex items-center gap-4 text-white text-2xl"
+              onClick={onClose}
             >
               <AiFillDashboard />
               <p>Dashboard</p>
@@ -71,6 +71,7 @@ export default function Sidebar({ isOpen, onClose, onOpen, btnRef }: any) {
             <Link
               href="/users"
               className="w-full pl-6  flex items-center gap-4 text-white text-2xl"
+              onClick={onClose}
             >
               <ImUsers />
               <p>Users</p>
@@ -79,6 +80,7 @@ export default function Sidebar({ isOpen, onClose, onOpen, btnRef }: any) {
             <Link
               href="/posts"
               className="w-full pl-6  flex items-center gap-4 text-white text-2xl"
+              onClick={onClose}
             >
               <BsFillPostcardFill />
               <p>Posts</p>
