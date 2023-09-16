@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { FaUserAlt } from "react-icons/fa";
 import { MdEditCalendar } from "react-icons/md";
 import { BiSolidCommentDots } from "react-icons/bi";
+import DashbaordCHart from "./components/Barchart";
 export default function Home() {
   const cardsData = [
     { category: "Users", icon: <FaUserAlt />, count: 1 },
@@ -47,8 +48,22 @@ export default function Home() {
             </Box>
           </Box>
         ))}
-        <Box>
-          <div></div>
+      </Flex>
+      <Flex
+        flexWrap="wrap"
+        justifyContent="center"
+        alignItems="center"
+        marginTop="100px"
+        width="full"
+        border="2px"
+        gap="60px"
+        height="300px"
+      >
+        <Box height="full">
+          <DashbaordCHart />
+        </Box>
+        <Box height="full">
+          <DashbaordCHart />
         </Box>
       </Flex>
     </Flex>

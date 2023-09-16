@@ -9,6 +9,7 @@ import Sidebar from "./components/Sidebar";
 import { useDisclosure } from "@chakra-ui/react";
 import React from "react";
 import Header from "./components/Header";
+import { AppProvider } from "./AppContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,9 +29,16 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ChakraProvider>
-          <Header btnRef={btnRef} onOpen={onOpen} />
-          <Sidebar btnRef={btnRef} onOpen={onOpen} isOpen={isOpen} onClose={onClose} />
-          {children}
+          <AppProvider>
+            <Header btnRef={btnRef} onOpen={onOpen} />
+            <Sidebar
+              btnRef={btnRef}
+              onOpen={onOpen}
+              isOpen={isOpen}
+              onClose={onClose}
+            />
+            {children}
+          </AppProvider>
         </ChakraProvider>
       </body>
     </html>
