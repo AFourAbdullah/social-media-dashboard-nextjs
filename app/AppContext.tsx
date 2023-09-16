@@ -25,7 +25,6 @@ export const AppProvider = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     getOrders().then((res: any) => {
-      setposts(res.total);
       setRevenue(res.discountedTotal);
     });
     getInventory().then((res: any) => {

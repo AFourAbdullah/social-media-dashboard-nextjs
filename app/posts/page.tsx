@@ -10,6 +10,9 @@ import {
   Thead,
   Tr,
 } from "@chakra-ui/react";
+import { BiSolidLike } from "react-icons/bi";
+import { AiFillTags } from "react-icons/ai";
+
 import React, { useContext, useEffect, useState } from "react";
 import { getUsers } from "..";
 import { useAppContext } from "../AppContext";
@@ -17,10 +20,12 @@ import { useAppContext } from "../AppContext";
 const page = () => {
   const { posts } = useAppContext()!;
   const [load, setLoad] = useState(false);
+  const [data, setdata] = useState([]);
   useEffect(() => {
     setLoad(true);
     if (posts.length > 0) {
       setLoad(false);
+      setdata(posts.slice(0, 11));
     }
   }, []);
   console.log("cstmers", posts);
@@ -37,18 +42,24 @@ const page = () => {
         >
           <Thead bg="teal.700" color="white">
             <Tr className="text-white">
-              <Th color="white">Image</Th>
+              <Th color="white">ID</Th>
 
-              <Th color="white">First Name</Th>
-              <Th color="white">Last Name</Th>
-              <Th color="white">User Name</Th>
+              <Th color="white">Title</Th>
+              <Th color="white">
+                <BiSolidLike />
+                Reactions
+              </Th>
+              <Th color="white">
+                <AiFillTags />
+                Tags
+              </Th>
               <Th color="white" isNumeric>
                 Email
               </Th>
             </Tr>
           </Thead>
           <Tbody>
-            {posts.map((post: any) => (
+            {data.map((post: any) => (
               <Tr>
                 <Td>{post.id}</Td>
                 <Td>{post.title}</Td>
