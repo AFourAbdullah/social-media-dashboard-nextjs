@@ -21,7 +21,7 @@ export default function Home() {
       m="10"
     >
       <Text color="gray.500" fontSize="3xl" fontWeight="medium">
-        Dashboard
+        DASHBOARD
       </Text>
       <Flex>
         {cardsData.map((card, index) => (

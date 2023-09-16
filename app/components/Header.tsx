@@ -17,7 +17,9 @@ const Header = ({ btnRef, onOpen }: any) => {
           bg="white"
         />
       </Menu>
-      <h3 className="text-center">Social Media</h3>
+      <div className="w-[96%] flex items-center justify-center">
+        <h3 className="text-2xl text-white font-bold italic">Social Media</h3>
+      </div>
     </div>
   );
 };

@@ -63,14 +63,14 @@ export default function Sidebar({ isOpen, onClose, onOpen, btnRef }: any) {
           >
             <Link
               href="/"
-              className="w-full pl-6 border-2 border-white flex items-center gap-4 text-white text-2xl"
+              className="w-full pl-6  flex items-center gap-4 text-white text-2xl"
             >
               <AiFillDashboard />
               <p>Dashboard</p>
             </Link>
             <Link
               href="/users"
-              className="w-full pl-6 border-2 border-white flex items-center gap-4 text-white text-2xl"
+              className="w-full pl-6  flex items-center gap-4 text-white text-2xl"
             >
               <ImUsers />
               <p>Users</p>
@@ -78,14 +78,16 @@ export default function Sidebar({ isOpen, onClose, onOpen, btnRef }: any) {
 
             <Link
               href="/posts"
-              className="w-full pl-6 border-2 border-white flex items-center gap-4 text-white text-2xl"
+              className="w-full pl-6  flex items-center gap-4 text-white text-2xl"
             >
               <BsFillPostcardFill />
               <p>Posts</p>
             </Link>
           </DrawerBody>
 
-          <DrawerFooter>
+          <DrawerFooter
+            style={{ display: "flex", justifyContent: "center", gap: "50px" }}
+          >
             <FaCopyright /> CopyRights Reserved
           </DrawerFooter>
         </DrawerContent>
